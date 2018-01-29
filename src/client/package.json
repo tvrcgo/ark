@@ -1,0 +1,16 @@
+{
+  "name": "ark",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ark test"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "author": "tvrcgo",
+  "license": "MIT"
+}
