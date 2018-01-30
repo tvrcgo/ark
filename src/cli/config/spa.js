@@ -17,7 +17,7 @@ module.exports = (argv) => {
   const config = {
     entry: {
       app: join(root, 'app'),
-      vendor: ['react', 'react-dom', 'react-router-dom', 'antd']
+      vendor: ['react', 'react-dom', 'react-router-dom'].concat(appConfig.vendor || [])
     },
     output: {
       filename: 'bundle/[name].js',
@@ -37,7 +37,7 @@ module.exports = (argv) => {
     resolveLoader: {
       modules: [
         join(root, 'node_modules'),
-        join(__dirname, '../node_modules'),
+        join(__dirname, '../node_modules')
       ]
     },
     module: {
@@ -49,8 +49,6 @@ module.exports = (argv) => {
             options: {
               presets: [ 'es2015', 'stage-0', 'react' ],
               plugins: [ 'transform-decorators-legacy' ],
-              cacheDirectory: true,
-              // extends: join(root, '.babelrc'),
               filename: join(__dirname, '../package.json')
             }
           },
@@ -61,19 +59,16 @@ module.exports = (argv) => {
           loader: 'awesome-typescript-loader',
           exclude: [ /node_modules/ ],
           options: {
-            // loader options
             useBabel: true,
             babelOptions: {
+              babelrc: false,
               presets: [ "es2015", "stage-0", "react" ],
               plugins: [ "transform-decorators-legacy" ],
-              cacheDirectory: true,
-              // extends: join(root, '.babelrc'),
               filename: join(__dirname, '../package.json')
             },
             useCache: false,
             emitRequireType: false,
-            // comiler options
-            target : "es6",
+            target: "es6",
             moduleResolution: "node",
             jsx : "react",
             experimentalDecorators: true,
@@ -82,10 +77,11 @@ module.exports = (argv) => {
             noImplicitAny: false,
             removeComments: true,
             sourceMap: false,
-            baseUrl: root,
+            allowJs: true,
             typeRoots: [
               join(__dirname, '../node_modules/@types'),
-              join(root, '/node_modules/@types')
+              join(root, 'node_modules/@types'),
+              join(root, 'typings')
             ]
           }
         },
