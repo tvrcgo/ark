@@ -35,6 +35,8 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "intelli-espower-loader": "^1.0.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "mocha": "^5.0.0",
     "node-emoji": "^1.8.1",
     "postcss-loader": "^2.0.10",
