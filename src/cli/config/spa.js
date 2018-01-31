@@ -47,7 +47,7 @@ module.exports = (argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: [ 'es2015', 'stage-0', 'react' ],
+              presets: [ 'es2016', 'stage-0', 'react' ],
               plugins: [ 'transform-decorators-legacy' ],
               filename: join(__dirname, '../package.json')
             }
