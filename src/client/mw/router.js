@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import routes from '$root/router'
 
-export default (app) => {
+export default app => {
 
   // app routes
   app.$routes = (
@@ -24,8 +24,10 @@ export default (app) => {
   )
 
   // render app
-  app.run = (selector = '#root') => {
-    render(<HashRouter>{app.$layout}</HashRouter>, document.querySelector(selector))
+  app.start = (selector = '#root') => {
+    app.run().then(() => {
+      render(<HashRouter>{app.$layout}</HashRouter>, document.querySelector(selector))
+    })
   }
 
 }

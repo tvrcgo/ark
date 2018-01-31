@@ -11,5 +11,4 @@ export default app => {
       <ThemeComponent app={app}>{app.$routes}</ThemeComponent>
     )
   }
-
 }

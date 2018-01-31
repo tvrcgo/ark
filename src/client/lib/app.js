@@ -8,7 +8,7 @@ class Application {
         enumerable: false,
         writable: true
       },
-      $plugin: {
+      $mw: {
         value: [],
         enumerable: false,
         writable: true
@@ -16,10 +16,23 @@ class Application {
     })
   }
 
-  use(plugin) {
-    if (plugin && typeof plugin === 'function') {
-      this.$plugin.push(plugin)
-      plugin.call(this, this)
+  use(mw, immediate = false) {
+    if (mw && typeof mw === 'function') {
+      if (immediate) {
+        mw.call(this, this)
+      } else {
+        this.$mw.push(mw)
+      }
+    }
+  }
+
+  async run(idx = 0) {
+    if (idx < this.$mw.length) {
+      try {
+        await this.$mw[idx](this.run.bind(this, idx+1), this)
+      } catch(err) {
+        console.error(err)
+      }
     }
   }
 
