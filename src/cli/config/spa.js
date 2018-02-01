@@ -48,7 +48,10 @@ module.exports = (argv) => {
             loader: 'babel-loader',
             options: {
               presets: [ 'es2016', 'stage-0', 'react' ],
-              plugins: [ 'transform-decorators-legacy' ],
+              plugins: [
+                'transform-decorators-legacy',
+                ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+              ],
               filename: join(__dirname, '../package.json')
             }
           },
