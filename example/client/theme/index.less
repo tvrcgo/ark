@@ -1,14 +1,54 @@
 
-@app-header-bg: #000;
-@app-header-height: 50px;
+@import "./constant.less";
 
 #root, body, html {
   padding: 0;
   margin: 0;
+  height: 100%;
+}
+
+.app {
+  height: 100%;
 }
 
 .app-header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: @app-header-height;
   line-height: @app-header-height;
   background-color: @app-header-bg;
+
+  .app-logo {
+    padding: 0 20px;
+    color: #fff;
+    display: inline-block;
+    height: @app-header-height;
+    line-height: @app-header-height;
+    text-decoration: none;
+    width: @app-sider-width;
+    text-align: center;
+
+    &:hover {
+      background-color: @app-header-bg-active;
+    }
+  }
+
+}
+
+.app-sider {
+  width: @app-sider-width;
+  background-color: @app-sider-bg;
+  height: 100vh;
+  padding-top: @app-header-height;
+  float: left;
+}
+
+.app-body {
+  padding: 15px;
+  box-sizing: border-box;
+  margin-left: @app-sider-width;
+  padding-top: @app-header-height + 15px;
 }

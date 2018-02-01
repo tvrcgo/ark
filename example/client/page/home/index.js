@@ -1,13 +1,13 @@
-
-import { Link } from 'react-router-dom'
-import './index.css'
+import {
+  Button
+} from 'antd'
 import Hello from '$root/component/Hello'
+import './index.css'
 
 export default (props) => {
   return (
     <div>
-      home <Link to='/user'>user</Link>
-      <Hello />
+      home
     </div>
   )
 }
