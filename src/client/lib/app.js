@@ -16,13 +16,9 @@ class Application {
     })
   }
 
-  use(mw, immediate = false) {
+  use(mw) {
     if (mw && typeof mw === 'function') {
-      if (immediate) {
-        mw.call(this, this)
-      } else {
-        this.$mw.push(mw)
-      }
+      this.$mw.push(mw)
     }
   }
 
@@ -38,7 +34,7 @@ class Application {
 
 }
 
-// Avoid application prototype members being modified by plugin.
+// Avoid prototype members being modified by plugin.
 (Object.freeze || Object)(Application.prototype)
 
 export default Application
