@@ -33,7 +33,9 @@ class WebApplication extends App {
 
   loadConfig() {
     const base = require('$root/config/config.default')
-    this.$config = extend(true, {}, base)
+    const postfix = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
+    const env = require(`$root/config/config.${postfix}.js`)
+    this.$config = extend(true, {}, base, env)
     return this.$config
   }
 
