@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import App from './app'
 import routes from '$root/router'
+import extend from 'extend2'
 
 class WebApplication extends App {
   constructor(ctx) {
@@ -26,6 +27,14 @@ class WebApplication extends App {
     )
     // default pure layout
     this.$layout = (<div>{this.$routes}</div>)
+    // load config.
+    this.config = this.loadConfig()
+  }
+
+  loadConfig() {
+    const base = require('$root/config/config.default')
+    this.$config = extend(true, {}, base)
+    return this.$config
   }
 
   // custom theme
