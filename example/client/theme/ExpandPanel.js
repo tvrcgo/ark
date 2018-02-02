@@ -4,8 +4,6 @@ import {
   Icon
 } from 'antd'
 
-import './index.less'
-
 class ExpandPanel extends React.Component {
   state = {
     expand: false,
@@ -38,11 +36,11 @@ class ExpandPanel extends React.Component {
       <span
         onMouseOver={this.open.bind(this)}
         onMouseOut={this.close.bind(this)}
-        className='item'
+        className='app-header-item'
       >
         {title} <Icon type={ expand ? 'up' : 'down' } style={{ fontSize: 8 }} />
         <div
-          className='item-expand'
+          className='app-header-item-expand'
           style={styles}
         >{children}</div>
       </span>

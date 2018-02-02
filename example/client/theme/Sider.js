@@ -49,12 +49,14 @@ export default () => {
     .filter(m => m.children && m.children.some(sm => sm.path === location.hash.substr(1)))
     .map(m => m.name)
   return (
-    <div style={{ height: '100%' }}>
+    <div className='app-sider' style={{ height: '100%' }}>
+      <div className='app-sider-title'>Menu</div>
       <Menu
         mode={'inline'}
+        theme={'light'}
         defaultSelectedKeys={[openMenu.name]}
         defaultOpenKeys={openGroup}
-        style={{ height: '100%' }}
+        className={'app-sider-tree'}
       >
         {renderMenu(menus)}
       </Menu>
