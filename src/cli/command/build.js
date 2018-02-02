@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const LiveReloadPlugin = require('webpack-livereload-plugin')
 const compiler = require('../lib/compiler')
 const base = require('../config/spa')
 
@@ -15,7 +16,10 @@ module.exports = function* (argv, cmd) {
       new webpack.EnvironmentPlugin({
         NODE_ENV: 'development'
       }),
-      new ExtractTextPlugin(`style/[name].css`)
+      new ExtractTextPlugin(`style/[name].css`),
+      new LiveReloadPlugin({
+        appendScriptTag: true
+      })
     )
     // compile
     compiler(config).watch({
