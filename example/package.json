@@ -7,11 +7,11 @@
     "dev": "npm run dev:client & npm run dev:server",
     "dev:client": "ark build --env=dev",
     "dev:server": "egg-bin dev --baseDir=server",
-    "test": "npm run test:client",
+    "test": "npm run test:client && npm run test:server",
     "test:client": "ark test client/test/**/*.test.js",
     "test:server": "egg-bin test server/test",
     "lint": "ark lint client",
-    "cov": "ark cov client/test/**/*.test.js",
+    "cov": "ark cov client/test/**/*.test.js server/test/**/*.test.js",
     "deploy": "ark build --env=prod"
   },
   "dependencies": {
