@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run client:dev & npm run server:dev",
-    "client:dev": "ark build --env=dev",
-    "server:dev": "egg-bin dev --baseDir=./server",
+    "dev": "npm run dev:client & npm run dev:server",
+    "dev:client": "ark build --env=dev",
+    "dev:server": "egg-bin dev --baseDir=server",
+    "test": "npm run test:client",
+    "test:client": "ark test client/test/**/*.test.js",
+    "test:server": "egg-bin test server/test",
     "deploy": "ark build --env=prod"
   },
   "dependencies": {
