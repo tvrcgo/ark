@@ -1,5 +1,4 @@
 import {
-  Icon,
   Row
 } from 'antd'
 import { Link } from 'react-router-dom'

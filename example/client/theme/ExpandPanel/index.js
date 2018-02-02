@@ -1,3 +1,5 @@
+import React from 'react'
+import PT from 'prop-types'
 import {
   Icon
 } from 'antd'
@@ -5,7 +7,6 @@ import {
 import './index.less'
 
 class ExpandPanel extends React.Component {
-
   state = {
     expand: false,
     left: 0
@@ -47,6 +48,13 @@ class ExpandPanel extends React.Component {
       </span>
     )
   }
+}
+
+ExpandPanel.propTypes = {
+  title: PT.string,
+  left: PT.number,
+  width: PT.string,
+  children: PT.any
 }
 
 export default ExpandPanel

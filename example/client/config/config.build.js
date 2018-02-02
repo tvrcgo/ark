@@ -1,6 +1,6 @@
 
 module.exports = {
-  vendor: [ 'antd' ],
+  vendor: ['antd'],
   alias: {},
   plugins: []
 }
