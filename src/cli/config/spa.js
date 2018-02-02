@@ -114,7 +114,7 @@ module.exports = (argv) => {
               {
                 loader: "less-loader",
                 options: {
-                  modifyVars: pkg.theme || {}
+                  modifyVars: appConfig.theme || {}
                 }
               }
             ]

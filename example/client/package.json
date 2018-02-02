@@ -10,9 +10,6 @@
     "antd": "^3.1.5",
     "ark": "../../src/client"
   },
-  "theme": {
-    "@primary-color": "#3b5998"
-  },
   "author": "tvrcgo",
   "license": "MIT"
 }

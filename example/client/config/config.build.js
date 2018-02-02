@@ -2,5 +2,8 @@
 module.exports = {
   vendor: ['antd'],
   alias: {},
-  plugins: []
+  plugins: [],
+  theme: {
+    "@primary-color": "#3b5998"
+  }
 }
