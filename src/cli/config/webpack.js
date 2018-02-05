@@ -152,7 +152,7 @@ module.exports = (argv) => {
         minChunks: Infinity
       }),
       new AssetsPlugin({
-        fullPath: false,
+        fullPath: true,
         path: dist,
         filename: 'assets.json',
       })

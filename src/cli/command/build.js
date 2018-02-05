@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin')
 const compiler = require('../lib/compiler')
-const base = require('../config/spa')
+const base = require('../config/webpack')
 
 module.exports = function* (argv, cmd) {
 
