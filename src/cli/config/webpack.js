@@ -22,7 +22,7 @@ module.exports = (argv) => {
     output: {
       filename: 'bundle/[name].js',
       path: dist,
-      publicPath: '/public/'
+      publicPath: appConfig.cdn || '/public/'
     },
     resolve: {
       extensions: [ '.ts', '.tsx', '.js', '.jsx', '.json' ],
