@@ -1,0 +1,26 @@
+{
+  "name": "ark-init",
+  "version": "0.0.1",
+  "description": "init ark app.",
+  "bin": {
+    "ark-init": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "boilerplate": {
+    "spa": "github:axios/axios",
+    "module": "github:tvrcgo/dataware"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "tvrcgo",
+  "license": "MIT",
+  "dependencies": {
+    "download-git-repo": "^1.0.2",
+    "inquirer": "^5.1.0",
+    "ora": "^1.4.0"
+  },
+  "devDependencies": {}
+}
