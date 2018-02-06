@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+  ark_app:
+    build: .
+    image: ark-app
+    container_name: ark-app-run
+    ports:
+      - '8081'
