@@ -18,13 +18,15 @@ const handler = (err, stats) => {
   console.log('\n', stats.toString({
     chunks: false,
     colors: true,
-    modules: false
+    modules: false,
+    hash: false,
+    version: false
   }), '\n')
 }
 
 module.exports = (config) => {
 
-  const spin = ora()
+  const spin = ora('Building ...')
 
   config.plugins.push(new webpack.ProgressPlugin((percent, msg) => {
     const perc = chalk.green(`${(percent*100).toFixed(1)}%`)
@@ -34,12 +36,11 @@ module.exports = (config) => {
   const compiler = webpack(config)
 
   compiler.plugin("compile", (params) => {
-    spin.text = 'Building start.'
     spin.start()
   })
 
   compiler.plugin('done', (stats) => {
-    spin.succeed('Building finished.')
+    spin.succeed(chalk.green(`Building finished.`))
     spin.stop()
   })
 
