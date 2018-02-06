@@ -1,0 +1,24 @@
+{
+  "name": "ark-module-boilerplate",
+  "version": "0.0.1",
+  "description": "ark module boilerplate.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "tsc --watch",
+    "clean": "rimraf dist",
+    "test": "jest",
+    "prepublish": "npm run clean && tsc"
+  },
+  "keywords": [
+    "module"
+  ],
+  "author": "tvrcgo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "jest": "^22.1.4",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.7.1"
+  }
+}
