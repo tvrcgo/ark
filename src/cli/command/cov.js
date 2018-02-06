@@ -1,6 +1,10 @@
 const { resolve } = require('path')
 
-module.exports = function* (argv, cmd) {
+exports.options = {
+  desc: 'run coverage test.'
+}
+
+exports.run = function* (argv, cmd) {
   const nyc = require.resolve('nyc/bin/nyc.js')
   const cli = resolve(__dirname, '../bin/cli.js')
   const args = [

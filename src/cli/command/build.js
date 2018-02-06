@@ -4,8 +4,11 @@ const LiveReloadPlugin = require('webpack-livereload-plugin')
 const compiler = require('../lib/compiler')
 const base = require('../config/webpack')
 
-module.exports = function* (argv, cmd) {
+exports.options = {
+  desc: 'build web app.'
+}
 
+exports.run = function* (argv, cmd) {
   const config = base(argv)
 
   if (argv.env === 'dev') {
@@ -50,5 +53,4 @@ module.exports = function* (argv, cmd) {
     // compile
     compiler(config).run()
   }
-
 }

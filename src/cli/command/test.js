@@ -1,6 +1,10 @@
 const { resolve } = require('path')
 
-module.exports = function* (argv, cmd) {
+exports.options = {
+  desc: 'run test.'
+}
+
+exports.run = function* (argv, cmd) {
   const mocha = require.resolve('mocha/bin/_mocha')
   const args = [
     '--require',

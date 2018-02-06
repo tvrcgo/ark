@@ -1,6 +1,10 @@
 const { resolve } = require('path')
 
-module.exports = function* (argv, cmd) {
+exports.options = {
+  desc: 'eslint'
+}
+
+exports.run = function* (argv, cmd) {
   const eslint = require.resolve('eslint/bin/eslint.js')
   const args = [
     '--config',

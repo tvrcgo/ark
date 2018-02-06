@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const Cmd = require('../lib/cmd')
-new Cmd().run()
+const cmd = require('../lib/cmd')
+new cmd().parse()

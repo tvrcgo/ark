@@ -1,44 +1,33 @@
 const { resolve, dirname } = require('path')
-const ls = require('./ls')
-const co = require('co')
 const cp = require('child_process')
-
-const CMDS = Symbol.for('cmd#commands')
+const co = require('co')
+const cac = require('cac')
+const ls = require('./ls')
 
 class Cmd {
   constructor(opts) {
     this.$opts = opts || {}
-    this.argv = require('minimist')(process.argv.slice(2))
-    this[CMDS] = new Map()
+    this.$cli = cac()
+  }
+
+  // parse cmd
+  parse() {
     // load cmds
     const cmdsDir = resolve(dirname(require.main.filename), '../command')
     this.load(cmdsDir)
+    // parse
+    this.$cli.parse()
   }
 
-  // run cmd
-  run(cmd) {
-    cmd = cmd || this.argv._[0]
-    const entry = this[CMDS].get(cmd)
-    if (!entry) {
-      return console.error(`'${cmd}' unknown command.`)
-    }
-    const self = this
-    const argv = this.argv
-    return co(function* () {
-      yield entry(argv, self)
-    }).catch(err => console.error(err.message))
-  }
-
-  // add sub cmd
-  add(cmd, entry) {
-    this[CMDS].set(cmd, entry)
-    return this
-  }
-
-  // cmd alias
-  alias(alias, name) {
-    this[CMDS].set(alias, this[CMDS].get(name))
-    return this
+  // add cmd
+  add(name, entry) {
+    this.$cli.command(name, entry.options, (input, flags) => {
+      flags._ = input
+      const self = this
+      return co(function*() {
+        yield entry.run(flags, self)
+      }).catch(err => console.error(err))
+    })
   }
 
   // load cmds
