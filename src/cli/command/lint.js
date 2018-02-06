@@ -9,6 +9,6 @@ exports.run = function* (argv, cmd) {
   const args = [
     '--config',
     resolve(__dirname, '../config/eslint.json')
-  ].concat(argv._.slice(1))
+  ].concat(argv._)
   yield cmd.fork(eslint, args)
 }

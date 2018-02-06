@@ -12,7 +12,7 @@ exports.run = function* (argv, cmd) {
     '--report-dir', 'cov',
     cli,
     'test'
-  ].concat(argv._.slice(1))
+  ].concat(argv._)
   const opt = {
     env: {
       NODE_ENV: 'test',

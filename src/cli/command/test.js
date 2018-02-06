@@ -11,6 +11,6 @@ exports.run = function* (argv, cmd) {
     'intelli-espower-loader',
     '--require',
     'co-mocha',
-  ].concat(argv._.slice(1))
+  ].concat(argv._)
   yield cmd.fork(mocha, args)
 }
