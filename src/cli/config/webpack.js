@@ -16,8 +16,7 @@ module.exports = (argv) => {
   // base config
   const config = {
     entry: {
-      app: join(root, 'app'),
-      vendor: ['react', 'react-dom', 'react-router-dom'].concat(appConfig.vendor || [])
+      app: join(root, 'app')
     },
     output: {
       filename: 'bundle/[name].js',
@@ -149,7 +148,11 @@ module.exports = (argv) => {
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        minChunks: Infinity
+        minChunks: ({ resource }) => (
+          resource &&
+          /node_modules/.test(resource) &&
+          /\.js$/.test(resource)
+        )
       }),
       new AssetsPlugin({
         fullPath: true,
