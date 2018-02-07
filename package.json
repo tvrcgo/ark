@@ -1,0 +1,26 @@
+{
+  "name": "ark",
+  "version": "0.1.0",
+  "description": "ark solution.",
+  "main": ".",
+  "directories": {
+    "doc": "doc",
+    "example": "example"
+  },
+  "scripts": {
+    "boot": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvrcgo/ark.git"
+  },
+  "author": "tvrcgo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tvrcgo/ark/issues"
+  },
+  "homepage": "https://github.com/tvrcgo/ark#readme",
+  "devDependencies": {
+    "lerna": "^2.8.0"
+  }
+}
