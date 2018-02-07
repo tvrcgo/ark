@@ -1,0 +1,23 @@
+{
+  "name": "ark-cli-boilerplate",
+  "version": "0.0.1",
+  "description": "ark cli boilerplate.",
+  "main": ".",
+  "bin": {
+    "ark-bin": "cli.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "ark test test/**/*.test.js"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "tvrcgo",
+  "license": "MIT",
+  "dependencies": {
+    "easy-cmd": "^0.1.2"
+  }
+}
