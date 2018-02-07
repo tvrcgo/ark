@@ -9,8 +9,9 @@
     "test": ""
   },
   "boilerplate": {
-    "spa": "github:axios/axios",
-    "module": "github:tvrcgo/dataware"
+    "spa": "github:tvrcgo/oneloop",
+    "module": "github:tvrcgo/dataware",
+    "cli": "github:tvrcgo/easy-cmd"
   },
   "keywords": [
     "cli"

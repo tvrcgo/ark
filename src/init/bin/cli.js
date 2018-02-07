@@ -10,10 +10,11 @@ const questions = [
   {
     name: 'type',
     type: 'list',
-    message: 'Please select a boilerplate type',
+    message: 'Select a boilerplate type',
     choices: [
       'spa',
-      'module'
+      'module',
+      'cli'
     ]
   },
   {
@@ -23,10 +24,9 @@ const questions = [
   }
 ]
 
-inquirer.prompt(questions).then(answer => {
+co(function* (){
+  const answer = yield inquirer.prompt(questions)
   const boiUrl = pkg.boilerplate[answer.type]
-  co(function*() {
-    yield download.repo(boiUrl, resolve(process.cwd(), answer.name))
-  }).catch(err => console.error(err))
+  const saveDir = resolve(process.cwd(), answer.name)
+  yield download.repo(boiUrl, saveDir)
 })
-

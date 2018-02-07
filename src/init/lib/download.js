@@ -12,7 +12,8 @@ exports.repo = function* (repository, dest, options = {}) {
         spin.fail(err.message)
         return reject(err)
       }
-      spin.succeed('Download finished.')
+      spin.succeed(`Finished.`)
+      console.log('\n', `Project Dir: ${dest}`, '\n')
       resolve()
     })
   })
