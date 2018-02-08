@@ -1,7 +1,8 @@
 {
   "lerna": "2.8.0",
   "packages": [
-    "src/*"
+    "src/*",
+    "example"
   ],
   "version": "0.1.0",
   "npmClient": "npm"

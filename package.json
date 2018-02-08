@@ -8,7 +8,8 @@
     "example": "example"
   },
   "scripts": {
-    "boot": "lerna bootstrap"
+    "boot": "lerna bootstrap",
+    "clean": "lerna clean"
   },
   "repository": {
     "type": "git",
