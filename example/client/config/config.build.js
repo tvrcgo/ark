@@ -4,6 +4,6 @@ module.exports = {
   alias: {},
   plugins: [],
   theme: {
-    "@primary-color": "#3b5998"
+    "@primary-color": "#19A973"
   }
 }

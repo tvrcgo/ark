@@ -1,6 +1,6 @@
 
 export default () => {
   return (
-    <div>hello component.</div>
+    <div>hello world.</div>
   )
 }

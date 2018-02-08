@@ -1,4 +1,4 @@
 
 module.exports = {
-  title: 'Ark'
+  title: 'LOGO'
 }

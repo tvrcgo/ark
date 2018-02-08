@@ -7,7 +7,7 @@ import ExpandPanel from './ExpandPanel'
 export default ({ app }) => {
   return (
     <Row className='app-header'>
-      <Link to={'/'} className='app-logo'>{app.config.title}</Link>
+      <div className='app-logo'>{app.config.title}</div>
       <ExpandPanel title={'Service'} width='100%' left={0}>
         to release ...
       </ExpandPanel>
