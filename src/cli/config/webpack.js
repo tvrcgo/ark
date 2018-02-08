@@ -46,10 +46,15 @@ module.exports = (argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: [ 'es2016', 'stage-0', 'react' ],
+              presets: [
+                'env',
+                'stage-0',
+                'react'
+              ],
               plugins: [
+                ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
                 'transform-decorators-legacy',
-                ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+                'transform-runtime'
               ],
               filename: join(__dirname, '../package.json')
             }
@@ -64,8 +69,15 @@ module.exports = (argv) => {
             useBabel: true,
             babelOptions: {
               babelrc: false,
-              presets: [ "es2015", "stage-0", "react" ],
-              plugins: [ "transform-decorators-legacy" ],
+              presets: [
+                'env',
+                "stage-0",
+                "react"
+              ],
+              plugins: [
+                'transform-decorators-legacy',
+                'transform-runtime'
+              ],
               filename: join(__dirname, '../package.json')
             },
             useCache: false,
