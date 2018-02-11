@@ -34,7 +34,7 @@ const renderMenu = menus => {
     }
     return (
       <Menu.Item key={menu.name}>
-        <Link to={menu.path} >{menu.title}</Link>
+        <Link to={menu.path} replace >{menu.title}</Link>
       </Menu.Item>
     )
   })

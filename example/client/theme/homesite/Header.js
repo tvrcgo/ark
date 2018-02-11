@@ -13,9 +13,9 @@ export default ({ app }) => {
           <a>BRAND</a>
         </div>
         <div className={'site-nav'}>
-          <Link to='/' className={'site-nav-item'}>Feature</Link>
-          <Link to='/user' className={'site-nav-item'}>Price</Link>
-          <Link to='/' className={'site-nav-item'}>Concat</Link>
+          <Link to='/' replace className={'site-nav-item'}>Feature</Link>
+          <Link to='/user' replace className={'site-nav-item'}>Price</Link>
+          <Link to='/' replace className={'site-nav-item'}>Concat</Link>
         </div>
       </div>
     </Row>
