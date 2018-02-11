@@ -1,5 +1,5 @@
 import app from 'ark'
-import theme from './theme'
+import theme from './theme/homesite'
 
 app.theme(theme)
 

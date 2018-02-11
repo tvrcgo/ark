@@ -1,0 +1,50 @@
+
+@site-width: 800px;
+@site-nav-size: 16px;
+@site-nav-height: 50px;
+
+.site {
+  .site-header {
+    padding: 30px 0;
+    overflow: auto;
+    font-size: @site-nav-size;
+
+    .site-logo {
+      float: left;
+
+      a {
+        display: inline-block;
+        height: @site-nav-height;
+        line-height: @site-nav-height;
+      }
+    }
+
+    .site-nav {
+      float: right;
+
+      .site-nav-item {
+        display: inline-block;
+        height: @site-nav-height;
+        line-height: @site-nav-height;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .site-banner {
+    display: block;
+    padding: 20px 0;
+    background-color: cadetblue;
+    min-height: 300px;
+  }
+
+  .site-content {
+    padding: 20px 0;
+  }
+}
+
+.wrap {
+  width: @site-width;
+  margin: 0 auto;
+  overflow: auto;
+}
