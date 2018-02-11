@@ -1,7 +1,6 @@
 
 import Header from './Header'
 import Banner from './Banner'
-import Content from './Content'
 import './index.less'
 
 export default ({ app, children }) => {
@@ -9,7 +8,9 @@ export default ({ app, children }) => {
     <div className={'site'}>
       <Header app={app} />
       <Banner />
-      <Content />
+      <div className={'site-content'}>
+        <div className={'wrap'}>{children}</div>
+      </div>
     </div>
   )
 }
