@@ -51,8 +51,8 @@ class WebApplication extends App {
     this.run().then(() => {
       render(<HashRouter>{this.$layout}</HashRouter>, document.querySelector(selector))
     }).catch(err => {
-      render(<div>repairing ...</div>, document.querySelector(selector))
-      console.error('[ark] app.start() ->', err)
+      render(<div>Render Error. ({err.message})</div>, document.querySelector(selector))
+      console.error('app.start() ->', err)
     })
   }
 
