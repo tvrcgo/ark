@@ -4,15 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const extend = require('extend2')
 const { join } = require('path')
 
-// fix loaderUtils.parseQuery() warning. Remove GTD.
-process.noDeprecation = true
-
 module.exports = (argv) => {
   const cwd = process.cwd()
   const root = join(cwd, argv.baseDir || 'client')
   const dist = join(cwd, argv.distDir || 'server/app/public')
   const pkg = require(join(root, 'package.json'))
-  const appConfig = require(join(root, 'config/config.build.js'))
+  const appConfig = require(join(root, 'config/config.build'))
   // base config
   const config = {
     entry: {
