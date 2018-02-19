@@ -18,7 +18,7 @@ module.exports = (argv) => {
     output: {
       filename: 'bundle/[name].js',
       path: dist,
-      publicPath: appConfig.cdn || '/public/'
+      publicPath: appConfig.cdn || appConfig.publicPath || '/public/'
     },
     resolve: {
       extensions: [ '.ts', '.tsx', '.js', '.jsx', '.json' ],
@@ -43,16 +43,11 @@ module.exports = (argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: [
-                'env',
-                'stage-0',
-                'react'
-              ],
+              presets: [ 'env', 'stage-0', 'react' ],
               plugins: [
-                ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
                 'transform-decorators-legacy',
                 'transform-runtime'
-              ],
+              ].concat(appConfig.babel.plugins || []),
               filename: join(__dirname, '../package.json')
             }
           },
@@ -66,15 +61,11 @@ module.exports = (argv) => {
             useBabel: true,
             babelOptions: {
               babelrc: false,
-              presets: [
-                'env',
-                "stage-0",
-                "react"
-              ],
+              presets: [ 'env', 'stage-0', 'react' ],
               plugins: [
                 'transform-decorators-legacy',
                 'transform-runtime'
-              ],
+              ].concat(appConfig.babel.plugins || []),
               filename: join(__dirname, '../package.json')
             },
             useCache: false,
