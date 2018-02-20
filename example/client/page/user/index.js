@@ -2,6 +2,6 @@ import React from 'react'
 
 export default () => {
   return (
-    <div>user</div>
+    <div>user content.</div>
   )
 }
