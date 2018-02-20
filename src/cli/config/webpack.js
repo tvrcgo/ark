@@ -58,21 +58,10 @@ module.exports = (argv) => {
           loader: 'awesome-typescript-loader',
           exclude: [ /node_modules/ ],
           options: {
-            useBabel: true,
-            babelOptions: {
-              babelrc: false,
-              presets: [ 'env', 'stage-0', 'react' ],
-              plugins: [
-                'transform-decorators-legacy',
-                'transform-runtime'
-              ].concat(appConfig.babel.plugins || []),
-              filename: join(__dirname, '../package.json')
-            },
-            useCache: false,
-            emitRequireType: false,
             target: "es6",
             moduleResolution: "node",
             jsx : "react",
+            emitRequireType: false,
             experimentalDecorators: true,
             strictNullChecks: true,
             allowSyntheticDefaultImports: true,
