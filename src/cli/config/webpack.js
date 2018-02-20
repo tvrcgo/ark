@@ -149,7 +149,10 @@ module.exports = (argv) => {
         fullPath: true,
         path: dist,
         filename: 'assets.json',
-      })
+      }),
+      new webpack.WatchIgnorePlugin([
+        /\.d\.ts$/
+      ])
     ].concat(appConfig.plugins || [])
   }
 
