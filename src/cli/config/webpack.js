@@ -55,25 +55,27 @@ module.exports = (argv) => {
         },
         {
           test: /\.tsx?$/,
-          loader: 'awesome-typescript-loader',
-          exclude: [ /node_modules/ ],
-          options: {
-            target: "es6",
-            moduleResolution: "node",
-            jsx : "react",
-            emitRequireType: false,
-            experimentalDecorators: true,
-            strictNullChecks: true,
-            allowSyntheticDefaultImports: true,
-            noImplicitAny: false,
-            removeComments: true,
-            sourceMap: false,
-            allowJs: true,
-            typeRoots: [
-              join(__dirname, '../node_modules/@types'),
-              join(root, 'node_modules/@types'),
-              join(root, 'typings')
-            ]
+          use: {
+            loader: 'ts-loader',
+            options: {
+              compilerOptions: {
+                target: "es6",
+                moduleResolution: "node",
+                jsx : "react",
+                experimentalDecorators: true,
+                strictNullChecks: true,
+                allowSyntheticDefaultImports: true,
+                noImplicitAny: false,
+                removeComments: true,
+                sourceMap: false,
+                allowJs: true,
+                typeRoots: [
+                  join(__dirname, '../node_modules/@types'),
+                  join(root, 'node_modules/@types'),
+                  join(root, 'typings')
+                ]
+              }
+            }
           }
         },
         {
