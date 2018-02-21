@@ -115,7 +115,7 @@ module.exports = (argv) => {
           exclude: /node_modules/,
           loader: "url-loader",
           options: {
-            limit: 2048,
+            limit: appConfig.inlineImageSize || 2048,
             name: "image/[hash:12].[ext]"
           }
         }
