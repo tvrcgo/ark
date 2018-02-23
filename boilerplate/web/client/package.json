@@ -1,0 +1,18 @@
+{
+  "name": "ark-client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "ark test"
+  },
+  "dependencies": {
+    "antd": "^3.1.5",
+    "ark": "^1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.38"
+  },
+  "author": "tvrcgo",
+  "license": "MIT"
+}
