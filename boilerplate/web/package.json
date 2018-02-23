@@ -1,7 +1,7 @@
 {
-  "name": "ark-example",
+  "name": "ark-web-boilerplate",
   "version": "0.0.1",
-  "description": "",
+  "description": "ark web boilerplate.",
   "scripts": {
     "dev": "npm run dev:client & npm run dev:server",
     "dev:client": "ark build --env=dev",
@@ -13,8 +13,8 @@
     "cov": "ark cov client/test/**/*.test.js server/test/**/*.test.js",
     "deploy": "ark build --env=prod"
   },
-  "dependencies": {
-    "ark-cli": "../src/cli",
+  "devDependencies": {
+    "ark-cli": "^1",
     "egg-bin": "^4.3.7"
   },
   "author": "tvrcgo",

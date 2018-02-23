@@ -1,0 +1,22 @@
+{
+  "name": "ark-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "egg-bin dev",
+    "test": "egg-bin test"
+  },
+  "dependencies": {
+    "ark-server": "^1"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.7"
+  },
+  "egg": {
+    "framework": "ark-server"
+  },
+  "author": "tvrcgo",
+  "license": "MIT"
+}
