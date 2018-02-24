@@ -1,9 +1,9 @@
 
 const { resolve } = require('path')
+const assets = require(resolve(__dirname, '../public/assets.json'))
 
 module.exports = {
-  * renderApp(vars = {}) {
-    const assets = require(resolve(__dirname, '../public/assets.json'))
+  * renderClient(vars = {}) {
     yield this.render('index.nj', Object.assign({
       assets,
     }, vars))

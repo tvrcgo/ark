@@ -13,6 +13,23 @@ class WebApplication extends App {
   constructor(ctx) {
     super(ctx)
     // app routes
+    this.router(routes)
+    // default pure layout
+    this.$layout = (<div>{this.$routes}</div>)
+    // load config.
+    this.loadConfig()
+  }
+
+  loadConfig() {
+    const base = require('$root/config/config.default')
+    const postfix = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
+    const env = require(`$root/config/config.${postfix}`)
+    this.$config = extend(true, {}, base, env)
+    this.config = this.$config
+  }
+
+  // set routes
+  router(routes) {
     this.$routes = (
       <Switch>
         {routes.map((route, index) => (
@@ -25,18 +42,6 @@ class WebApplication extends App {
         ))}
       </Switch>
     )
-    // default pure layout
-    this.$layout = (<div>{this.$routes}</div>)
-    // load config.
-    this.config = this.loadConfig()
-  }
-
-  loadConfig() {
-    const base = require('$root/config/config.default')
-    const postfix = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
-    const env = require(`$root/config/config.${postfix}`)
-    this.$config = extend(true, {}, base, env)
-    return this.$config
   }
 
   // custom theme

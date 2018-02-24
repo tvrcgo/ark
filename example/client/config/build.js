@@ -1,6 +1,5 @@
 
 module.exports = {
-  cdn: '',
   alias: {},
   plugins: [],
   babel: {

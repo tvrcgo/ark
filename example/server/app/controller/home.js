@@ -1,6 +1,6 @@
 
 module.exports = function* () {
-  yield this.renderApp({
+  yield this.renderClient({
     title: 'App'
   })
 }

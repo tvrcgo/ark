@@ -6,19 +6,18 @@ const { join } = require('path')
 
 module.exports = (argv) => {
   const cwd = process.cwd()
-  const root = join(cwd, argv.baseDir || 'client')
+  const root = join(cwd, argv.rootDir || 'client')
   const dist = join(cwd, argv.distDir || 'server/app/public')
   const pkg = require(join(root, 'package.json'))
-  const appConfig = require(join(root, 'config/config.build'))
+  const appConfig = require(join(root, argv.config || 'config/build.js'))
   // base config
   const config = {
-    entry: {
+    entry: appConfig.entry || {
       app: join(root, 'app')
     },
     output: {
-      filename: 'bundle/[name].js',
       path: dist,
-      publicPath: appConfig.cdn || appConfig.publicPath || '/public/'
+      publicPath: appConfig.publicPath || appConfig.cdn || '/public/'
     },
     resolve: {
       extensions: [ '.ts', '.tsx', '.js', '.jsx', '.json' ],

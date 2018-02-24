@@ -3,4 +3,4 @@ import theme from './theme/homesite'
 
 app.theme(theme)
 
-app.start('#root')
+app.start()
