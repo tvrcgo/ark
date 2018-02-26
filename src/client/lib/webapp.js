@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import {
-  HashRouter,
+  HashRouter as Router,
   Switch,
   Route
 } from 'react-router-dom'
@@ -52,13 +52,13 @@ class WebApplication extends App {
   }
 
   // render app
-  start(selector = '#root') {
-    this.run().then(() => {
-      render(<HashRouter>{this.$layout}</HashRouter>, document.querySelector(selector))
-    }).catch(err => {
-      render(<div>Render Error. ({err.message})</div>, document.querySelector(selector))
+  async start(selector = '#root') {
+    try {
+      await this.run()
+      render(<Router>{this.$layout}</Router>, document.querySelector(selector))
+    } catch (err) {
       console.error('app.start() ->', err)
-    })
+    }
   }
 
 }
