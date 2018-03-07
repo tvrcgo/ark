@@ -28,6 +28,12 @@ exports.run = function* (argv, cmd) {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
       )
+      // use css-hot-loader
+      config.module.rules
+        .filter(rule => rule.test.test('.css'))
+        .map(rule => {
+          rule.use = ['css-hot-loader'].concat(rule.use)
+        })
     } else {
       // Live reload
       config.plugins.push(
