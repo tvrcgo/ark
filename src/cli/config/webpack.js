@@ -17,7 +17,9 @@ module.exports = (argv) => {
     },
     output: {
       path: dist,
-      publicPath: appConfig.publicPath || appConfig.cdn || '/public/'
+      publicPath: appConfig.publicPath || appConfig.cdn || '/public/',
+      hotUpdateChunkFilename: 'hot/[id].[hash].hot-update.js',
+      hotUpdateMainFilename: 'hot/[hash].hot-update.json'
     },
     resolve: {
       extensions: [ '.ts', '.tsx', '.js', '.jsx', '.json' ],

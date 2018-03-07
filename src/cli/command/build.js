@@ -1,7 +1,9 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin')
+const { resolve } = require('path')
 const compiler = require('../lib/compiler')
+const HotWatch = require('../lib/hotwatch')
 const base = require('../config/webpack')
 
 exports.options = {
@@ -12,17 +14,34 @@ exports.run = function* (argv, cmd) {
   const config = base(argv)
 
   if (argv.env === 'dev') {
+    config.devtool = 'eval'
     // bundle file name
     config.output.filename = 'bundle/[name].js'
+    // hot
+    if (argv.hot) {
+      // HMR
+      config.entry.app = [
+        resolve(__dirname, '../lib/hot')
+      ]
+      config.plugins.push(
+        new HotWatch(),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+      )
+    } else {
+      // Live reload
+      config.plugins.push(
+        new LiveReloadPlugin({
+          appendScriptTag: true
+        })
+      )
+    }
     // plugins
     config.plugins.push(
       new webpack.EnvironmentPlugin({
         NODE_ENV: 'development'
       }),
-      new ExtractTextPlugin(`style/[name].css`),
-      new LiveReloadPlugin({
-        appendScriptTag: true
-      })
+      new ExtractTextPlugin(`style/[name].css`)
     )
     // compile
     compiler(config).watch({
