@@ -1,8 +1,10 @@
 const http = require('http')
 
-let signal = '', lastSignal = signal
-
 function HotWatch(options = {}) {
+
+  let interval
+  let lastSignal = null
+  this.signal = null
 
   http.createServer((req, res) => {
     res.writeHead(200, {
@@ -11,27 +13,27 @@ function HotWatch(options = {}) {
       "Connection":"keep-alive",
       "Access-Control-Allow-Origin": '*'
     })
-    res.write("retry: 2000\n")
+    res.write(`retry: ${options.retry || 3000}\n`)
 
     interval = setInterval(() => {
-      if (lastSignal != signal) {
-        res.write(`data: ${signal}\n\n`)
-        lastSignal = signal
+      if (lastSignal != this.signal) {
+        res.write(`data: ${this.signal}\n\n`)
+        lastSignal = this.signal
       }
-    }, options.poll || 1000)
+    }, 1000)
 
     req.connection.addListener("close", function () {
       clearInterval(interval)
     }, false)
 
-  }).listen(options.port || 32651)
+  }).listen(32651)
   console.log('[HMR] Hotwatch start ...', '\n')
 }
 
 HotWatch.prototype.apply = function(compiler) {
   // done
   compiler.plugin('done', (stats) => {
-    signal = `done#${stats.hash}`
+    this.signal = `done#${stats.hash}`
   })
 }
 

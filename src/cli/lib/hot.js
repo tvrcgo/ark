@@ -3,7 +3,6 @@ const checkUpdate = () => {
   if(module.hot.status() === "idle") {
     module.hot.check(true).then(function(updatedModules) {
       if(!updatedModules) {
-        window.location.reload()
         return
       }
       require("webpack/hot/log-apply-result")(updatedModules, updatedModules)
@@ -11,9 +10,10 @@ const checkUpdate = () => {
       const status = module.hot.status()
       if(["abort", "fail"].indexOf(status) >= 0) {
         console.warn("[HMR] Cannot apply update.")
-        console.warn("[HMR] " + err.stack || err.message)
+        console.warn(`[HMR] ${err.stack || err.message}`)
+        window.location.reload()
       } else {
-        console.warn("[HMR] Update failed: " + err.stack || err.message)
+        console.warn(`[HMR] Update failed: ${err.stack || err.message}`)
       }
     })
   }
@@ -34,16 +34,14 @@ try {
       console.log('[HMR] waiting for signal ...')
     }
     es.onmessage = function(e) {
-      const [evt, hash] = e.data.split('#')
-      switch (evt) {
-        case 'done':
-          console.log(`[HMR] signal -> ${e.data}`)
-          checkUpdate()
-          break
-        default:
-          break
+      const msg = e.data
+      if (/^done#\w+$/.test(msg)) {
+        console.log(`[HMR] signal -> ${e.data}`)
+        checkUpdate()
       }
     }
+  } else {
+    console.warn('[HMR] window.EventSource not support on your browser.')
   }
 } catch (err) {
   console.error('[cli/hot]', err)
