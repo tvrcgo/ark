@@ -9,9 +9,9 @@
     "test": ""
   },
   "boilerplate": {
-    "spa": "github:tvrcgo/oneloop",
-    "module": "github:tvrcgo/dataware",
-    "cli": "github:tvrcgo/easy-cmd"
+    "spa": "neus-web-boilerplate",
+    "module": "neus-module-boilerplate",
+    "cli": "neus-cli-boilerplate"
   },
   "keywords": [
     "cli"
