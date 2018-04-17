@@ -1,20 +1,20 @@
 {
-  "name": "ark-web-boilerplate",
+  "name": "neus-web-boilerplate",
   "version": "0.0.1",
-  "description": "ark web boilerplate.",
+  "description": "neus web boilerplate.",
   "scripts": {
-    "dev": "npm run dev:client & npm run dev:server",
-    "dev:client": "ark build --env=dev",
-    "dev:server": "egg-bin dev --baseDir=server",
+    "dev": "npm run client & npm run server",
+    "client": "neus build --env=dev",
+    "server": "egg-bin dev --baseDir=server",
     "test": "npm run test:client && npm run test:server",
-    "test:client": "ark test client/test/**/*.test.js",
+    "test:client": "neus test client/test/**/*.test.js",
     "test:server": "egg-bin test server/test",
-    "lint": "ark lint client",
-    "cov": "ark cov client/test/**/*.test.js server/test/**/*.test.js",
-    "deploy": "ark build --env=prod"
+    "lint": "neus lint client",
+    "cov": "neus cov client/test/**/*.test.js server/test/**/*.test.js",
+    "deploy": "neus build --env=prod"
   },
   "devDependencies": {
-    "ark-cli": "^1",
+    "neus-cli": "^1",
     "egg-bin": "^4.3.7"
   },
   "author": "tvrcgo",

@@ -1,4 +1,4 @@
 
-const { startCluster } = require('ark-server')
+const { startCluster } = require('neus-server')
 
 startCluster({})

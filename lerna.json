@@ -1,9 +1,13 @@
 {
   "lerna": "2.8.0",
   "packages": [
-    "src/*",
+    "src/cli",
+    "src/client",
+    "src/server",
+    "src/init",
     "example",
-    "example/*"
+    "example/client",
+    "example/server"
   ],
   "version": "0.1.0",
   "npmClient": "npm"

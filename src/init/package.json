@@ -1,9 +1,9 @@
 {
-  "name": "ark-init",
+  "name": "neus-init",
   "version": "0.0.1",
-  "description": "init ark app.",
+  "description": "init neus app.",
   "bin": {
-    "ark-init": "./bin/cli.js"
+    "neus-init": "./bin/cli.js"
   },
   "scripts": {
     "test": ""

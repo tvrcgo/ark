@@ -1,5 +1,5 @@
 
-exports.keys = 'ark-server'
+exports.keys = 'neus-server'
 
 exports.view = {
   defaultViewEngine: 'nunjucks',

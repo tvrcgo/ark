@@ -1,7 +1,7 @@
 {
-  "name": "ark-module-boilerplate",
+  "name": "neus-module-boilerplate",
   "version": "0.0.1",
-  "description": "ark module boilerplate.",
+  "description": "neus module boilerplate.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

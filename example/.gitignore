@@ -1,3 +1,4 @@
+node_modules/
 server/app/public/
 server/logs/
 server/run

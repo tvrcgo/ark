@@ -1,13 +1,13 @@
 {
-  "name": "ark-cli",
+  "name": "neus-cli",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
-    "ark": "./bin/cli.js"
+    "neus": "./bin/cli.js"
   },
   "scripts": {
-    "test": "ark test"
+    "test": "neus test"
   },
   "author": "tvrcgo",
   "license": "MIT",

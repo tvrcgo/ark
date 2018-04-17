@@ -1,3 +1,3 @@
-import app from 'ark'
+import app from 'neus'
 
 app.start()

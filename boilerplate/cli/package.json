@@ -1,16 +1,16 @@
 {
-  "name": "ark-cli-boilerplate",
+  "name": "neus-cli-boilerplate",
   "version": "0.0.1",
-  "description": "ark cli boilerplate.",
+  "description": "neus cli boilerplate.",
   "main": ".",
   "bin": {
-    "ark-bin": "cli.js"
+    "neus-bin": "cli.js"
   },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "ark test test/**/*.test.js"
+    "test": "neus test test/**/*.test.js"
   },
   "keywords": [
     "cli"

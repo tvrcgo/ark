@@ -1,14 +1,14 @@
 {
-  "name": "ark-client-example",
+  "name": "neus-client-example",
   "version": "0.0.1",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "ark test"
+    "test": "neus test"
   },
   "dependencies": {
     "antd": "^3.1.5",
-    "ark": "../../src/client"
+    "neus": "../../src/client"
   },
   "devDependencies": {
     "@types/react": "^16.0.38"

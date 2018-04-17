@@ -1,7 +1,7 @@
 {
-  "name": "ark",
+  "name": "neus",
   "version": "0.1.0",
-  "description": "ark solution.",
+  "description": "engineering solution.",
   "main": ".",
   "directories": {
     "doc": "doc",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tvrcgo/ark.git"
+    "url": "git+https://github.com/tvrcgo/neus.git"
   },
   "author": "tvrcgo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tvrcgo/ark/issues"
+    "url": "https://github.com/tvrcgo/neus/issues"
   },
-  "homepage": "https://github.com/tvrcgo/ark#readme",
+  "homepage": "https://github.com/tvrcgo/neus#readme",
   "devDependencies": {
     "lerna": "^2.8.0"
   }

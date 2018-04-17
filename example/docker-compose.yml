@@ -2,9 +2,9 @@ version: '2'
 
 services:
 
-  ark_app:
+  neus_app:
     build: .
-    image: ark-app
-    container_name: ark-app-run
+    image: neus-app
+    container_name: neus-app-run
     ports:
       - '8081'

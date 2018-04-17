@@ -1,10 +1,10 @@
 {
-  "name": "ark",
+  "name": "neus",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ark test"
+    "test": "neus test"
   },
   "dependencies": {
     "extend2": "^1.0.0",
