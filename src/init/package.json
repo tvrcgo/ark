@@ -1,6 +1,6 @@
 {
   "name": "neus-init",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "init neus app.",
   "bin": {
     "neus-init": "./bin/cli.js"
