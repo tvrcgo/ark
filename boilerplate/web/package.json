@@ -1,6 +1,6 @@
 {
   "name": "neus-web-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "neus web boilerplate.",
   "scripts": {
     "dev": "npm run client & npm run server",
@@ -14,7 +14,7 @@
     "deploy": "neus build --env=prod"
   },
   "devDependencies": {
-    "neus-cli": "^1",
+    "neus-cli": "^0.1",
     "egg-bin": "^4.3.7"
   },
   "author": "tvrcgo",
