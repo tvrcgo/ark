@@ -28,5 +28,5 @@ co(function* (){
   const answer = yield inquirer.prompt(questions)
   const boiUrl = pkg.boilerplate[answer.type]
   const saveDir = resolve(process.cwd(), answer.name)
-  yield download.repo(boiUrl, saveDir)
+  yield download.npm(boiUrl, saveDir)
 })
