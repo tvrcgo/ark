@@ -33,6 +33,7 @@ module.exports = (argv) => {
     },
     resolveLoader: {
       modules: [
+        join(cwd, 'node_modules'),
         join(root, 'node_modules'),
         join(__dirname, '../node_modules')
       ]
@@ -48,7 +49,7 @@ module.exports = (argv) => {
               plugins: [
                 'transform-decorators-legacy',
                 'transform-runtime'
-              ].concat(appConfig.babel.plugins || []),
+              ].concat((appConfig.babel && appConfig.babel.plugins) || []),
               filename: join(__dirname, '../package.json')
             }
           },
