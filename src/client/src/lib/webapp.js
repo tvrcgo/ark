@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import App from './app'
 import routes from '$root/router'
-import extend from 'extend2'
+import * as extend from 'extend2'
 
 class WebApplication extends App {
   constructor(ctx) {
