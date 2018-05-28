@@ -1,7 +1,8 @@
 import React from 'react'
+import './index.css'
 
 export default () => {
   return (
-    <div>home page.</div>
+    <div>Hello world !</div>
   )
 }
