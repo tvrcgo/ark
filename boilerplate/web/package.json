@@ -1,8 +1,9 @@
 {
   "name": "neus-web-boilerplate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "neus web boilerplate.",
   "scripts": {
+    "boot": "lerna bootstrap",
     "dev": "npm run client & npm run server",
     "client": "neus build --env=dev",
     "server": "egg-bin dev --baseDir=server",
@@ -14,8 +15,9 @@
     "deploy": "neus build --env=prod"
   },
   "devDependencies": {
-    "neus-cli": "^0.1",
-    "egg-bin": "^4.3.7"
+    "egg-bin": "^4.3.7",
+    "lerna": "^2.11.0",
+    "neus-cli": "^0.1"
   },
   "author": "tvrcgo",
   "license": "MIT"
