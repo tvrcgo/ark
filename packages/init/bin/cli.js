@@ -12,9 +12,8 @@ const questions = [
     type: 'list',
     message: 'Select a boilerplate type',
     choices: [
-      'spa',
-      'module',
-      'cli'
+      'web',
+      'module'
     ]
   },
   {
