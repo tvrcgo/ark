@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "egg-bin": "^4.3.7",
-    "neus-cli": "../src/cli"
+    "neus-cli": "../packages/cli"
   },
   "author": "tvrcgo",
   "license": "MIT"
