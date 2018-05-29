@@ -5,9 +5,9 @@
     "packages/client",
     "packages/server",
     "packages/init",
-    "example",
-    "example/client",
-    "example/server"
+    "packages/boilerplate-web",
+    "packages/boilerplate-module",
+    "packages/boilerplate-cli"
   ],
   "version": "0.1.0",
   "npmClient": "npm"

@@ -1,7 +1,7 @@
 {
   "name": "neus-example",
-  "version": "0.0.1",
   "description": "",
+  "private": true,
   "scripts": {
     "dev": "npm run client & npm run server",
     "client": "neus build --env=dev --hot",

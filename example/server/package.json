@@ -1,7 +1,7 @@
 {
   "name": "neus-server-example",
-  "version": "0.0.1",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

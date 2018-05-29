@@ -1,7 +1,7 @@
 {
   "name": "neus-client-example",
-  "version": "0.0.1",
   "description": "",
+  "private": true,
   "main": "app.js",
   "scripts": {
     "test": "neus test"
