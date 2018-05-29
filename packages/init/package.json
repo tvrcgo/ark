@@ -1,6 +1,6 @@
 {
   "name": "neus-init",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "init neus app.",
   "bin": {
     "neus-init": "./bin/cli.js"
@@ -9,9 +9,8 @@
     "test": ""
   },
   "boilerplate": {
-    "spa": "neus-web-boilerplate",
-    "module": "neus-module-boilerplate",
-    "cli": "neus-cli-boilerplate"
+    "web": "neus-web-boilerplate",
+    "module": "neus-module-boilerplate"
   },
   "keywords": [
     "cli"

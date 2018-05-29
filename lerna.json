@@ -6,8 +6,7 @@
     "packages/server",
     "packages/init",
     "packages/boilerplate-web",
-    "packages/boilerplate-module",
-    "packages/boilerplate-cli"
+    "packages/boilerplate-module"
   ],
   "version": "0.1.0",
   "npmClient": "npm"
