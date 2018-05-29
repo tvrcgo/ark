@@ -11,10 +11,7 @@ const questions = [
     name: 'type',
     type: 'list',
     message: 'Select a boilerplate type',
-    choices: [
-      'web',
-      'module'
-    ]
+    choices: Object.keys(pkg.boilerplate)
   },
   {
     name: 'name',

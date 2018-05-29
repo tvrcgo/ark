@@ -1,9 +1,9 @@
 {
   "name": "neus-web-boilerplate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "neus web boilerplate.",
   "scripts": {
-    "boot": "lerna bootstrap",
+    "boot": "npm install && lerna bootstrap",
     "dev": "npm run client & npm run server",
     "client": "neus build --env=dev",
     "server": "egg-bin dev --baseDir=server",
