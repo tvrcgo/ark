@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "antd": "^3.1.5",
-    "neus": "../../src/client"
+    "neus": "../../packages/client"
   },
   "devDependencies": {
     "@types/react": "^16.0.38"

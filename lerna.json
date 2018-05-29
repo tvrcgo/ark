@@ -1,10 +1,10 @@
 {
   "lerna": "2.8.0",
   "packages": [
-    "src/cli",
-    "src/client",
-    "src/server",
-    "src/init",
+    "packages/cli",
+    "packages/client",
+    "packages/server",
+    "packages/init",
     "example",
     "example/client",
     "example/server"

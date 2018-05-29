@@ -9,7 +9,7 @@
     "test": "egg-bin test"
   },
   "dependencies": {
-    "neus-server": "../../src/server"
+    "neus-server": "../../packages/server"
   },
   "devDependencies": {
     "egg-bin": "^4.3.7"
