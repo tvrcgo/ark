@@ -85,7 +85,15 @@ module.exports = (argv) => {
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
             use: [
-              "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:8]&camelCase",
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  importLoaders: 1,
+                  localIdentName: '[name]__[local]__[hash:base64:8]',
+                  camelCase: true
+                }
+              },
               {
                 loader: "postcss-loader",
                 options: {
@@ -102,7 +110,9 @@ module.exports = (argv) => {
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
             use: [
-              "css-loader",
+              {
+                loader: "css-loader"
+              },
               {
                 loader: "less-loader",
                 options: {
